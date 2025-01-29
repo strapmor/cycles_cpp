@@ -161,14 +161,14 @@ void task7() {
 
 void task8() {
     //Вывести расстояние в дюймах и сантиметрах от 2 до 12 с шагом 2
-    float inch = 2.54;
+    double inch = 2.54;
 
     cout << "Цикл for:\n";
-    for (int i = 2; i <= 12; i += 2)
+    for (double i = 2; i <= 12; i += 2)
         cout << "в " << i << " дюймах " << float(i * inch) << " см" << endl;
 
     cout << "Цикл while:\n";
-    int i = 2;
+    double i = 2;
     while (i <= 12) {
         cout << "в " << i << " дюймах " << float(i * inch) << " см" << endl;
         i += 2;
@@ -182,13 +182,35 @@ void task8() {
     } while (i <= 12);
 }
 
+void int_input(int &a) { // Проверяет, являются-ли введённые данные int
+    while (true) {
+        if (cin >> a) // Если введено целое число - идём дальше
+            break;
+        else {
+            cout << "Ошибка! Введено не целое число. Попробуйте снова: "; // Даём второй шанс
+            cin.clear(); // Сбрасываем ошибки ввода
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера от введённой кракозябры
+
+            /*
+                P.S.
+                cin.ignore() - удаляет символы из потока ввода
+                cin.clear() - обнуляет состояние потока cin, в данном случае - состояние ошибки
+                Эти методы вызываются для продолжения попыток ввода.
+                В противном случае цикл просто будет вечно выводить сообщение об ошибке
+            */
+        }
+    }
+}
+
 void task9() {
-    //Вывести чисел от a до b в обратном порядке
-    float a, b;
-    cout << "Введите первое число: ";
-    cin >> a;
-    cout << "Введите второе число: ";
-    cin >> b;
+    //Вывести кубы целых чисел от a до b в обратном порядке
+    int a, b;
+    cout << "Введите число a (a<=b): ";
+    int_input(a);
+
+    cout << "Введите число b: ";
+    int_input(b);
+
     cout << "Кубы чисел от " << a << " до " << b << " в обратном порядке:" << endl;
 
     cout << "Цикл for:\n";
@@ -210,6 +232,41 @@ void task9() {
     } while (i >= a);
 }
 
+void task10() {
+    //Вывести целые числа от a до b, оканчивающиеся на x
+    int a, b, x;
+    cout << "Введите первое число (a<=b): ";
+    int_input(a);
+    cout << "Введите второе число: ";
+    int_input(b);
+    cout << "Введите третье число: ";
+    int_input(x);
+    cout << "Целые числа от " << a << " до " << b << ", оканчивающиеся на " << x << ":" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if(i%10 == x)
+            cout << i  << endl;
+    }
+        
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i % 10 == x)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i % 10 == x)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
@@ -222,8 +279,8 @@ int main()
     //task6();
     //task7();
     //task8();
-    task9();
-
+    //task9();
+    task10();
 
 
     system("pause");
