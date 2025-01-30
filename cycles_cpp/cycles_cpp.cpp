@@ -267,6 +267,75 @@ void task10() {
     } while (i <= b);
 }
 
+void task11() {
+    //Вывести целые числа от a до b, оканчивающиеся на x или y
+    int a, b, x, y;
+    cout << "Введите первое число (a<=b): ";
+    int_input(a);
+    cout << "Введите второе число: ";
+    int_input(b);
+    cout << "Введите третье число: ";
+    int_input(x);
+    cout << "Введите четвёртое число: ";
+    int_input(y);
+    cout << "Целые числа от " << a << " до " << b << ", оканчивающиеся на " << x << " или " << y << ":" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i % 10 == x || i % 10 == y)
+            cout << i << endl;
+    }
+
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i % 10 == x || i % 10 == y)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i % 10 == x || i % 10 == y)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
+void task12() {
+    //Вывести целые числа от a до b, оканчивающиеся на чётное число
+    int a, b;
+    cout << "Введите первое число (a<=b): ";
+    int_input(a);
+    cout << "Введите второе число: ";
+    int_input(b);
+    cout << "Целые числа от " << a << " до " << b << ", оканчивающиеся на чётное число:" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i % 10%2 == 0)
+            cout << i << endl;
+    }
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i % 10%2 == 0)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i % 10%2 == 0)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
@@ -280,8 +349,9 @@ int main()
     //task7();
     //task8();
     //task9();
-    task10();
-
+    //task10();
+    //task11();
+    task12();
 
     system("pause");
     return 0;
