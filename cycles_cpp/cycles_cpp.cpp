@@ -336,6 +336,134 @@ void task12() {
     } while (i <= b);
 }
 
+void task13() {
+    //Вывести целые числа от a до b, оканчивающиеся на чётное число
+    int a, b;
+    cout << "Введите первое число (a<=b): ";
+    int_input(a);
+    cout << "Введите второе число: ";
+    int_input(b);
+    cout << "Целые числа от " << a << " до " << b << ", оканчивающиеся на чётное число:" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i > 0)
+            cout << i << endl;
+    }
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i > 0)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i > 0)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
+void task14() {
+    //Вывести целые числа от a до b, оканчивающиеся на чётное число
+    int a, b;
+    cout << "Введите первое число (a<=b): ";
+    int_input(a);
+    cout << "Введите второе число: ";
+    int_input(b);
+    cout << "Целые числа от " << a << " до " << b << ", оканчивающиеся на чётное число:" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i % 3 ==  0)
+            cout << i << endl;
+    }
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while ( i <= b) {
+        if (i % 3 == 0)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i % 3 == 0)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
+void task15() {
+    //Вывести целые числа от a до b, оканчивающиеся на чётное число
+    int a, b;
+    cout << "Введите первое число (a<=b): ";
+    int_input(a);
+    cout << "Введите второе число: ";
+    int_input(b);
+    cout << "Целые числа от " << a << " до " << b << ", оканчивающиеся на чётное число:" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i % 3 == 0 && i % 2 == 0)
+            cout << i << endl;
+    }
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i % 3 == 0 && i % 2 == 0)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i % 3 == 0 && i % 2 == 0)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
+void task16() {
+    //Вывести целые числа от a до b, оканчивающиеся на чётное число
+    int a, b;
+    cout << "Введите первое число (a<=b): ";
+    int_input(a);
+    cout << "Введите второе число: ";
+    int_input(b);
+    cout << "Целые числа от " << a << " до " << b << ", оканчивающиеся на чётное число:" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i < 0 && i % 2 == 0)
+            cout << i << endl;
+    }
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i < 0 && i % 2 == 0)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i < 0 && i % 2 == 0)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
@@ -351,7 +479,11 @@ int main()
     //task9();
     //task10();
     //task11();
-    task12();
+    //task12();
+    //task13();
+    task14();
+    task15();
+    task16();
 
     system("pause");
     return 0;
