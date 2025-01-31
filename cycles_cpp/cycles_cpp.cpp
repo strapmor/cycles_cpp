@@ -547,28 +547,94 @@ void task18() {
     } while (i <= b);
 }
 
+void task19() {
+    //Вывести целые трёхзначные числа от a до b, которые начинаются и заканчиваются на одну цифру
+    int a, b;
+    cout << "Введите первое трёхзначное число (a<=b): ";
+    three_digit_input(a);
+    cout << "Введите второе трёхзначное число: ";
+    three_digit_input(b);
+    cout << "Целые двузначные числа от " << a << " до " << b << ", которые начинаются и заканчиваются на одну цифру:" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i%10 == i /100)
+            cout << i << endl;
+    }
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i % 10 == i / 100)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i % 10 == i / 100)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
+void task20() {
+    //Вывести целые трёхзначные числа от a до b, в которых хотя бы две цифры повторяются
+    int a, b;
+    cout << "Введите первое трёхзначное число (a<=b): ";
+    three_digit_input(a);
+    cout << "Введите второе трёхзначное число: ";
+    three_digit_input(b);
+    cout << "Целые двузначные числа от " << a << " до " << b << ", в которых хотя бы две цифры повторяются:" << endl;
+
+    cout << "Цикл for:\n";
+    for (int i = a; i <= b; i++) {
+        if (i % 10 == i / 100 || i%10 == i /10%10 || i /100 == i/10%10)
+            cout << i << endl;
+    }
+
+    cout << "Цикл while:\n";
+    int i = a;
+    while (i <= b) {
+        if (i % 10 == i / 100 || i % 10 == i / 10 % 10 || i / 100 == i / 10 % 10)
+            cout << i << endl;
+        i++;
+    }
+
+    cout << "Цикл do while:\n";
+    i = a;
+    do {
+        if (i % 10 == i / 100 || i % 10 == i / 10 % 10 || i / 100 == i / 10 % 10)
+            cout << i << endl;
+        i++;
+    } while (i <= b);
+}
+
 int main()
 {
     setlocale(LC_ALL, "rus");
 
-    //task1();
-    //task2();
-    //task3();
-    //task4();
-    //task5();
-    //task6();
-    //task7();
-    //task8();
-    //task9();
-    //task10();
-    //task11();
-    //task12();
-    //task13();
-    //task14();
-    //task15();
-    //task16();
-    //task17();
+    task1();
+    task2();
+    task3();
+    task4();
+    task5();
+    task6();
+    task7();
+    task8();
+    task9();
+    task10();
+    task11();
+    task12();
+    task13();
+    task14();
+    task15();
+    task16();
+    task17();
     task18();
+    task19();
+    task20();
 
     system("pause");
     return 0;
